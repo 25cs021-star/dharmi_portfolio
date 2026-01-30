@@ -9,6 +9,7 @@ const projects = [
     description: "Autonomous line-following robot with real-time navigation",
     bgColor: "bg-teal-500",
     textColor: "text-white",
+    repoUrl: "https://github.com/25cs021-star/robotics-track-tracer",
   },
   {
     number: "2",
@@ -17,6 +18,7 @@ const projects = [
     description: "Comprehensive DSA problem solving and algorithms",
     bgColor: "bg-amber-600",
     textColor: "text-white",
+    repoUrl: "https://github.com/25cs021-star/dsa-problems",
   },
   {
     number: "3",
@@ -25,6 +27,7 @@ const projects = [
     description: "Frontend and backend development projects",
     bgColor: "bg-green-500",
     textColor: "text-white",
+    repoUrl: "https://github.com/25cs021-star/web-projects",
   },
   {
     number: "4",
@@ -33,6 +36,7 @@ const projects = [
     description: "Automation and scripting projects",
     bgColor: "bg-red-500",
     textColor: "text-white",
+    repoUrl: "https://github.com/25cs021-star/python-projects",
   },
   {
     number: "5",
@@ -41,6 +45,7 @@ const projects = [
     description: "Embedded systems and IoT projects",
     bgColor: "bg-blue-500",
     textColor: "text-white",
+    repoUrl: "https://github.com/25cs021-star/arduino-projects",
   },
 ];
 
@@ -72,10 +77,11 @@ export function ProjectsSection() {
           {projects.map((project) => (
             <Link
               key={project.number}
-              href="https://github.com/25cs021-star"
+              href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative ${project.bgColor} rounded-2xl overflow-hidden aspect-[3/4] flex flex-col justify-end p-4 transition-transform hover:scale-105`}
+              className={`group relative ${project.bgColor} rounded-2xl overflow-hidden aspect-[3/4] flex flex-col justify-end p-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer`}
+              aria-label={`View ${project.title} project on GitHub`}
             >
               {/* Project Preview Area */}
               <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
@@ -84,7 +90,7 @@ export function ProjectsSection() {
 
               {/* Large Number */}
               <span
-                className={`text-[8rem] md:text-[10rem] font-black ${project.textColor} opacity-30 absolute bottom-0 right-2 leading-none`}
+                className={`text-[8rem] md:text-[10rem] font-black ${project.textColor} opacity-30 absolute bottom-0 right-2 leading-none transition-transform duration-300 group-hover:scale-110`}
               >
                 {project.number}
               </span>
@@ -103,7 +109,7 @@ export function ProjectsSection() {
 
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <ExternalLink className="text-white" size={24} />
+                <ExternalLink className="text-white transition-transform duration-300 group-hover:scale-110" size={24} />
               </div>
             </Link>
           ))}

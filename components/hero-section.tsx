@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -34,18 +35,18 @@ export function HeroSection() {
           Portfolio
         </p>
 
-        {/* Illustration placeholder - Avatar with initials */}
+        {/* Professional Photo */}
         <div className="flex justify-center">
           <div className="relative">
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/30 dark:to-amber-800/30 flex items-center justify-center overflow-hidden">
-              <div className="text-center">
-                <div className="text-6xl md:text-8xl font-black text-foreground/80">
-                  DI
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-2">
-                  Software Developer
-                </div>
-              </div>
+            <div className="w-48 h-60 md:w-64 md:h-80 rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/profile.jpg"
+                alt="Dharmi Italiya - Software Developer"
+                width={400}
+                height={500}
+                priority
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-foreground rounded-full" />

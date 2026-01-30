@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const experiences = [
@@ -84,8 +85,14 @@ export function AboutSection() {
               {/* ID Card */}
               <div className="w-48 bg-card border-2 border-border rounded-xl p-4 shadow-lg relative">
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-2 bg-muted-foreground/20 rounded-full" />
-                <div className="w-full aspect-[4/5] rounded-lg bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/30 dark:to-amber-800/30 flex items-center justify-center mt-4">
-                  <span className="text-4xl font-black text-foreground/70">DI</span>
+                <div className="w-full aspect-[4/5] rounded-lg bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/30 dark:to-amber-800/30 flex items-center justify-center mt-4 overflow-hidden">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Dharmi Italiya"
+                    width={200}
+                    height={250}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="text-center mt-4">
                   <p className="font-bold text-foreground text-sm">Dharmi Italiya</p>
